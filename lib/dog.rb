@@ -6,12 +6,9 @@ class Dog
     attr_reader :name
 
     @@all = []
-    @@count = 0
 
     def initialize(name)
         @name = name
-        @@count += 1
-
         @@all << self
     end
 
@@ -20,16 +17,14 @@ class Dog
     end
 
     def self.count
-        @@count
+        @@all.count
     end
 
     def self.all
         @@all
-        # binding.pry
     end
 
     def self.print_all
-        # binding.pry
         @@all.each {|dog| puts dog.name}
     end
 
